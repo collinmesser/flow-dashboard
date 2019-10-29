@@ -7,14 +7,14 @@ INDEX_YAML="index.yaml"
 CRON_YAML="cron.yaml"
 QUEUE_YAML="queue.yaml"
 
-check_tests(){
-	./run_tests.sh
-	RESULT=$?
-	if [ $RESULT -ne 0 ]; then
-		echo -e "\nUNIT TESTS FAILED!\n"
-		cancel_deploy
-	fi
-}
+# check_tests(){
+# 	./run_tests.sh
+# 	RESULT=$?
+# 	if [ $RESULT -ne 0 ]; then
+# 		echo -e "\nUNIT TESTS FAILED!\n"
+# 		cancel_deploy
+# 	fi
+# }
 
 rollback(){
 	echo -e "\nRolling back.....\n"
@@ -34,7 +34,7 @@ deploy(){
 	check_tests
 	build_js
 	cd ../
-	gcloud config configurations activate flow
+	gcloud config configurations activate flow-dashboard
 	if [ "$env" == "staging" ]; then
 		gcloud app deploy $deploy_configs --quiet --version=$version --no-promote
 	else

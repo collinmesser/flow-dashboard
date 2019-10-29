@@ -77,7 +77,7 @@ skip_files:
 - ^design/.*$
 - ^lib/.*(\.(?!py)).*$
 - ^scripts/.*$
-- ^env/.*$
+# - ^env/.*$
 - ^\.Python$
 - ^bin/.*$
 

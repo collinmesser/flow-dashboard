@@ -7,7 +7,7 @@ TAGLINE = "A personal dashboard to focus on what matters"
 SECURE_BASE = "https://flowdash.co"
 
 # Emails
-APP_OWNER = "onejgordon@gmail.com"
+APP_OWNER = "collin@collinmesser.com"
 ADMIN_EMAIL = APP_OWNER
 DAILY_REPORT_RECIPS = [APP_OWNER]
 SENDER_EMAIL = APP_OWNER
