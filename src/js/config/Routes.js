@@ -5,7 +5,7 @@ var App = require('components/App');
 var Dashboard = require('components/Dashboard');
 var Timeline = require('components/Timeline');
 var Splash = require('components/Splash');
-var About = require('components/About');
+var Affirmations = require('components/Affirmations');
 var Privacy = require('components/Privacy');
 var Auth = require('components/Auth');
 var Settings = require('components/Settings');
@@ -41,10 +41,10 @@ module.exports = (
     <IndexRedirect to="/app" />
     <Route path="auth/:provider" component={Auth} />
     <Route path="app" component={App}>
-      <IndexRedirect to="/app/about" />
+      <IndexRedirect to="/app/affirmations" />
       <Route path="splash" component={Splash} />
       <Route path="login" component={Splash} />
-      <Route path="about" component={About} />
+      <Route path="affirmations" component={Affirmations} />
       <Route path="privacy" component={Privacy} />
       <Route path="dashboard" component={Dashboard} />
       <Route path="timeline" component={Timeline} />

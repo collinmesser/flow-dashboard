@@ -1,16 +1,18 @@
 'use strict';
 
 var React = require('react');
-import {Link} from 'react-router';
-import {browserHistory} from 'react-router';
-import { FontIcon, MenuItem, RaisedButton,
-  IconButton, AppBar, Drawer} from 'material-ui';
+import { Link } from 'react-router';
+import { browserHistory } from 'react-router';
+import {
+  FontIcon, MenuItem, RaisedButton,
+  IconButton, AppBar, Drawer
+} from 'material-ui';
 var AppConstants = require('constants/AppConstants');
 var UserActions = require('actions/UserActions');
 var UserStore = require('stores/UserStore');
 var ReactTooltip = require('react-tooltip');
 import connectToStores from 'alt-utils/lib/connectToStores';
-import {G_OAUTH_CLIENT_ID, DEV_G_OAUTH_CLIENT_ID, DEV_GOOGLE_API_KEY, GOOGLE_API_KEY} from 'constants/client_secrets';
+import { G_OAUTH_CLIENT_ID, DEV_G_OAUTH_CLIENT_ID, DEV_GOOGLE_API_KEY, GOOGLE_API_KEY } from 'constants/client_secrets';
 var api = require('utils/api');
 var toastr = require('toastr');
 
@@ -64,17 +66,17 @@ export default class Private extends React.Component {
     if (gUser && gUser.isSignedIn()) {
       var profile = gUser.getBasicProfile();
       var id_token = gUser.getAuthResponse().id_token;
-      let {user} = this.props;
+      let { user } = this.props;
       let new_user = !user || profile.getEmail() != user.email;
       if (new_user) {
-        let data = {token: id_token};
-        this.setState({signing_in: true}, () => {
+        let data = { token: id_token };
+        this.setState({ signing_in: true }, () => {
           api.post('/api/auth/google_login', data, (res) => {
             UserActions.storeUser(res.user);
             browserHistory.push('/app/dashboard');
-            this.setState({signing_in: false});
+            this.setState({ signing_in: false });
           }, (res_fail) => {
-            this.setState({signing_in: false});
+            this.setState({ signing_in: false });
           })
         });
       }
@@ -82,12 +84,12 @@ export default class Private extends React.Component {
   }
 
   signout() {
-    this.setState({ln_open: false});
+    this.setState({ ln_open: false });
     UserActions.logout();
   }
 
   goto_page(page) {
-    this.setState({ln_open: false}, () => {
+    this.setState({ ln_open: false }, () => {
       browserHistory.push(page);
     })
   }
@@ -98,9 +100,9 @@ export default class Private extends React.Component {
   }
 
   render_nav_menu() {
-    let {user} = this.props;
+    let { user } = this.props;
     let menu = [];
-    menu.push(<MenuItem key="about" onClick={this.goto_page.bind(this, "/app/about")} leftIcon={<FontIcon className="material-icons">help</FontIcon>}>About</MenuItem>)
+    menu.push(<MenuItem key="affirmations" onClick={this.goto_page.bind(this, "/app/affirmations")} leftIcon={<FontIcon className="material-icons">help</FontIcon>}>Affirmations</MenuItem>)
     if (user) {
       menu = menu.concat([
         <MenuItem key="dash" onClick={this.goto_page.bind(this, "/app/dashboard")} leftIcon={<FontIcon className="material-icons">dashboard</FontIcon>}>Dashboard</MenuItem>,
@@ -117,18 +119,18 @@ export default class Private extends React.Component {
     return menu;
   }
 
-  handle_toggle_leftnav = () => this.setState({ln_open: !this.state.ln_open});
-  handle_leftnav_change = (open) => this.setState({ln_open: open});
+  handle_toggle_leftnav = () => this.setState({ ln_open: !this.state.ln_open });
+  handle_leftnav_change = (open) => this.setState({ ln_open: open });
 
   render() {
-    let {user} = this.props;
-    let {SITENAME} = AppConstants;
+    let { user } = this.props;
+    let { SITENAME } = AppConstants;
     let LOGO = <img src="/images/logo_white.png" className="flowlogo glow" width="50" />
     let right_icon;
     let on_signin = this.props.location.pathname == '/app/login';
-    let on_about = this.props.location.pathname == '/app/about';
-    if (!user && !on_signin) right_icon = <Link to="/app/login"><RaisedButton primary={true} label="Sign In" style={{marginTop: "5px", marginRight: "5px"}}/></Link>
-    if (user && on_about) right_icon = <Link to="/app/dashboard"><RaisedButton primary={true} label="Dashboard" style={{marginTop: "5px", marginRight: "5px"}}/></Link>
+    let on_affirmations = this.props.location.pathname == '/app/affirmations';
+    if (!user && !on_signin) right_icon = <Link to="/app/login"><RaisedButton primary={true} label="Sign In" style={{ marginTop: "5px", marginRight: "5px" }} /></Link>
+    if (user && on_affirmations) right_icon = <Link to="/app/dashboard"><RaisedButton primary={true} label="Dashboard" style={{ marginTop: "5px", marginRight: "5px" }} /></Link>
     return (
       <div>
         <AppBar
@@ -146,12 +148,12 @@ export default class Private extends React.Component {
             iconElementLeft={<IconButton iconClassName="material-icons">arrow_back</IconButton>}
             onTitleTouchTap={this.go_home.bind(this)}
             onLeftIconButtonTouchTap={this.handle_toggle_leftnav.bind(this)} />
-          { this.render_nav_menu() }
+          {this.render_nav_menu()}
         </Drawer>
 
         <div id="container" className="container">
           <div className="app-content">
-            { React.cloneElement(this.props.children, { user: user, signing_in: this.state.signing_in }) }
+            {React.cloneElement(this.props.children, { user: user, signing_in: this.state.signing_in })}
           </div>
         </div>
 
