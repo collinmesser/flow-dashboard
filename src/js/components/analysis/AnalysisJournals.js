@@ -354,7 +354,7 @@ export default class AnalysisJournals extends React.Component {
                 <h5 className="sectionBreak">{title}</h5>
                 <div className="row">
                     <div className="col-sm-4">
-                        <YearSelector first_year={2016} year={form.annual_viewer_year} onChange={this.changeHandlerVal.bind(this, 'form', 'annual_viewer_year')} />
+                        <YearSelector first_year={2019} year={form.annual_viewer_year} onChange={this.changeHandlerVal.bind(this, 'form', 'annual_viewer_year')} />
                     </div>
                     <div className="col-sm-4">
                         <FlatButton onClick={this.fetch_annual_journals} label="Load Journal Data" />
@@ -369,6 +369,20 @@ export default class AnalysisJournals extends React.Component {
                                 value={form.annual_viewer_key}
                                 clearable={false}
                                 simpleValue />
+                    </div>
+                </div>
+                <div className="row">
+                    <div className="legend">
+                        <span className="square" style="background-color: rgb(0, 255, 0);"></span><span style={{marginRight: 3 + 'px'}}> = 10</span>
+                        <span className="square" style="background-color: rgb(23, 227, 0);"></span><span style={{marginRight: 3 + 'px'}}> = 9</span>
+                        <span className="square" style="background-color: rgb(46, 199, 0);"></span><span style={{marginRight: 3 + 'px'}}> = 8</span>
+                        <span className="square" style="background-color: rgb(69, 170, 0);"></span><span style={{marginRight: 3 + 'px'}}> = 7</span>
+                        <span className="square" style="background-color: rgb(91, 142, 0);"></span><span style={{marginRight: 3 + 'px'}}> = 6</span>
+                        <span className="square" style="background-color: rgb(114, 114, 0);"></span><span style={{marginRight: 3 + 'px'}}> = 5</span>
+                        <span className="square" style="background-color: rgb(137, 85, 0);"></span><span style={{marginRight: 3 + 'px'}}> = 4</span>
+                        <span className="square" style="background-color: rgb(159, 57, 0);"></span><span style={{marginRight: 3 + 'px'}}> = 3</span>
+                        <span className="square" style="background-color: rgb(189, 29, 0);"></span><span style={{marginRight: 3 + 'px'}}> = 2</span>
+                        <span className="square" style="background-color: rgb(255, 0, 0);"></span><span style={{marginRight: 3 + 'px'}}> = 1</span>
                     </div>
                 </div>
 

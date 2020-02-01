@@ -1,6 +1,6 @@
 # General info
 
-AUTHOR_NAME = "Jeremy Gordon"
+AUTHOR_NAME = "Collin Messer"
 SITENAME = "Flow"
 EMAIL_PREFIX = "[ Flow ] "
 TAGLINE = "A personal dashboard to focus on what matters"

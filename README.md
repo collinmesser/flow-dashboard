@@ -59,83 +59,79 @@ Update the APP_OWNER variable in constants.py. Owner should match the Google acc
 Create the following files from the templates. For this step you'll need to create an oauth 2.0 web client ID from the GCP console, as per the instructions in `secrets_template.py`.
 
 - **secrets.py** ::
-	`./settings/secrets_template.py => ./settings/secrets.py`
+  `./settings/secrets_template.py => ./settings/secrets.py`
 
 - **client_secrets.js** ::
-	`./src/js/constants/client_secrets.templates.js => ./src/js/constants/clients_secrets.js`
-
+  `./src/js/constants/client_secrets.templates.js => ./src/js/constants/clients_secrets.js`
 
 ### Run the dev server locally
 
 To avoid conflicts sometimes seen with gcloud and google.cloud python libs it is often helpful to run the dev server in a virtualenv. Make sure dev_appserver.py is in your path.
 
-* `virtualenv env`
-* `source env/bin/activate`
-* `pip install -t lib -r requirements.txt`
-* `pip install -r local.requirements.txt`
-* `gcloud components update`
-* `cd scripts`
-* `./server.sh` (in scripts/) to start the dev server locally.
-* Run `gulp` in another terminal to build JS etc
-* Visit localhost:8080 to run the app, and localhost:8000 to view the local dev server console.
+- `virtualenv env`
+- `source env/bin/activate`
+- `pip install -t lib -r requirements.txt`
+- `pip install -r local.requirements.txt`
+- `gcloud components update`
+- `cd scripts`
+- `./server.sh` (in scripts/) to start the dev server locally.
+- Run `gulp` in another terminal to build JS etc
+- Visit localhost:8080 to run the app, and localhost:8000 to view the local dev server console.
 
 ### Deploy
 
-`./scripts/deploy.sh 0-1` to deploy a new version 0-1 and set is as default
+`CD scripts`
+`./deploy.sh 0-1` to deploy a new version 0-1 and set is as default
 
 Visit `https://[project-id].appspot.com` to see the app live.
 
 ## Features
 
-* Daily journal / survey
-	* Configurable questions
-	* Optional location pickup & mapping
-	* Extract @mentions and #tags from configured open-ended responses (auto-suggest)
-	* Segment analysis of journals by tag (highlight journal days with/without + show averages)
-* Habit tracking ala habits app
-	* With weekly targets
-	* Commitments
-	* Optional daily targets for 'countable' habits
-* Tracking top tasks for each day
-	* Analyze tasks completed: on time, late, not completed, on each given day
-* Monthly/year/long-term goals
-	* Goal assessment report at end of month
-	* Rating for each goal monthly defined
-* Ongoing Projects tracking
-	* Track time of each progress increment
-	* Link tasks with projects
-	* Define labeled milestones
-	* View 'burn-up' chart of completion progress over time
-* Analysis
-	* Show summary charts of all data reported to platform
-* Google Assitant / Home / Facebook Messenger integration for actions like:
-	* "How am I doing"
-	* "What are my goals for this month"
-	* "Mark 'run' as complete"
-	* "Daily report"
-* Reading widget
-	* Show currently-reading articles / books
-	* Sync quotes from evernote / Kindle
-	* Sync articles from Pocket
-	* Mark articles / books as favorites, and add notes
-	* Quotes & articles fully searchable
-* Flash card widget for spreadsheet access (e.g. random quotes, excerpts)
-* Export all data to CSV
+- Daily journal / survey
+  _ Configurable questions
+  _ Optional location pickup & mapping
+  _ Extract @mentions and #tags from configured open-ended responses (auto-suggest)
+  _ Segment analysis of journals by tag (highlight journal days with/without + show averages)
+- Habit tracking ala habits app
+  _ With weekly targets
+  _ Commitments \* Optional daily targets for 'countable' habits
+- Tracking top tasks for each day \* Analyze tasks completed: on time, late, not completed, on each given day
+- Monthly/year/long-term goals
+  _ Goal assessment report at end of month
+  _ Rating for each goal monthly defined
+- Ongoing Projects tracking
+  _ Track time of each progress increment
+  _ Link tasks with projects
+  _ Define labeled milestones
+  _ View 'burn-up' chart of completion progress over time
+- Analysis \* Show summary charts of all data reported to platform
+- Google Assitant / Home / Facebook Messenger integration for actions like:
+  _ "How am I doing"
+  _ "What are my goals for this month"
+  _ "Mark 'run' as complete"
+  _ "Daily report"
+- Reading widget
+  _ Show currently-reading articles / books
+  _ Sync quotes from evernote / Kindle
+  _ Sync articles from Pocket
+  _ Mark articles / books as favorites, and add notes \* Quotes & articles fully searchable
+- Flash card widget for spreadsheet access (e.g. random quotes, excerpts)
+- Export all data to CSV
 
 ## Integrations
 
 ### Data source integrations
 
-* Public Github commits
-* Google Fit - track any activity durations by keyword
-* Evernote - pull excerpts from specified notebooks
-* Pocket - Sync stored articles & add notes
-* Goodreads - Sync currently reading shelf
-* Track any abstract data via REST API
+- Public Github commits
+- Google Fit - track any activity durations by keyword
+- Evernote - pull excerpts from specified notebooks
+- Pocket - Sync stored articles & add notes
+- Goodreads - Sync currently reading shelf
+- Track any abstract data via REST API
 
 ### Setup (for separate instance)
 
-All integrations work out of the box on flowdash.co, but if you're spinning up your own instance, you'll need to set up each integration you need.  See below for specific instructions.
+All integrations work out of the box on flowdash.co, but if you're spinning up your own instance, you'll need to set up each integration you need. See below for specific instructions.
 
 #### Pocket
 

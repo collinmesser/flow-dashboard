@@ -17,7 +17,7 @@ var AppConstants = {
   JOURNAL_HOURS_BACK: 8,
   DASHBOARD_PAGE_TITLE: "Dashboard",
   SECURE_BASE: "https://flowdash.co",
-  TAGLINE: "Using positive affirmations interrupts and eventually replaces the barrage of negative thoughts and limiting beliefs.",
+  TAGLINE: "2020 One Word: UNCOMFORTABLE",
   INTEGRATIONS: [
     { value: 'pocket', label: "Pocket" },
     { value: 'goodreads', label: "Goodreads" },

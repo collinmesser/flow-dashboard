@@ -112,11 +112,11 @@ export default class Dashboard extends React.Component {
 
                 <TaskWidget ref="taskwidget" user={user} />
 
+                <HabitWidget user={user} />
+
                 <GoalViewer goal_slots={goal_slots} />
 
                 <ProjectViewer />
-
-                <HabitWidget user={user} />
 
                 <div className="row">
                     <div className="col-sm-6">

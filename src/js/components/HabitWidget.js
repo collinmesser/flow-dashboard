@@ -41,7 +41,7 @@ export default class HabitWidget extends React.Component {
           on_mobile: util.user_agent_mobile(),
           cancellable_habitday: null
       };
-      this.MOBILE_SHOW_DAYS = 2
+      this.MOBILE_SHOW_DAYS = 3
       this.SHOW_MATERIAL_ICONS = ['check_circle', 'group_work', 'add', 'directions_run',
                                   'spa', 'lightbulb_outline', 'access_alarm', 'fitness_center',
                                   'lock', 'stars', 'visibility', 'play_circle_filled',

@@ -24,7 +24,7 @@ export default class ProjectViewer extends React.Component {
 
   static defaultProps = {
     due_soon_days: 5,
-    initially_show: 3,
+    initially_show: 5,
     working: false
   }
 
