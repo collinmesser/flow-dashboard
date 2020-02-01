@@ -373,16 +373,16 @@ export default class AnalysisJournals extends React.Component {
                 </div>
                 <div className="row">
                     <div className="legend">
-                        <span className="square" style="background-color: rgb(0, 255, 0);"></span><span> = 10</span>
-                        <span className="square" style="background-color: rgb(23, 227, 0);"></span><span> = 9</span>
-                        <span className="square" style="background-color: rgb(46, 199, 0);"></span><span> = 8</span>
-                        <span className="square" style="background-color: rgb(69, 170, 0);"></span><span> = 7</span>
-                        <span className="square" style="background-color: rgb(91, 142, 0);"></span><span> = 6</span>
-                        <span className="square" style="background-color: rgb(114, 114, 0);"></span><span> = 5</span>
-                        <span className="square" style="background-color: rgb(137, 85, 0);"></span><span> = 4</span>
-                        <span className="square" style="background-color: rgb(159, 57, 0);"></span><span> = 3</span>
-                        <span className="square" style="background-color: rgb(189, 29, 0);"></span><span> = 2</span>
-                        <span className="square" style="background-color: rgb(255, 0, 0);"></span><span> = 1</span>
+                        <span className="square" style={{ backgroundColor: "rgb(0, 255, 0)" }}></span><span style={{marginRight: 3 + 'px'}}> = 10</span>
+                        <span className="square" style={{ backgroundColor: "rgb(23, 227, 0)" }}></span><span style={{marginRight: 3 + 'px'}}> = 9</span>
+                        <span className="square" style={{ backgroundColor: "rgb(46, 199, 0)" }}></span><span style={{marginRight: 3 + 'px'}}> = 8</span>
+                        <span className="square" style={{ backgroundColor: "rgb(69, 170, 0)" }}></span><span style={{marginRight: 3 + 'px'}}> = 7</span>
+                        <span className="square" style={{ backgroundColor: "rgb(91, 142, 0)" }}></span><span style={{marginRight: 3 + 'px'}}> = 6</span>
+                        <span className="square" style={{ backgroundColor: "rgb(114, 114, 0)" }}></span><span style={{marginRight: 3 + 'px'}}> = 5</span>
+                        <span className="square" style={{ backgroundColor: "rgb(137, 85, 0)" }}></span><span style={{marginRight: 3 + 'px'}}> = 4</span>
+                        <span className="square" style={{ backgroundColor: "rgb(159, 57, 0)" }}></span><span style={{marginRight: 3 + 'px'}}> = 3</span>
+                        <span className="square" style={{ backgroundColor: "rgb(189, 29, 0)" }}></span><span style={{marginRight: 3 + 'px'}}> = 2</span>
+                        <span className="square" style={{ backgroundColor: "rgb(255, 0, 0)" }}></span><span style={{marginRight: 3 + 'px'}}> = 1</span>
                     </div>
                 </div>
 
