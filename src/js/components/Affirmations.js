@@ -29,7 +29,7 @@ export default class About extends React.Component {
         return (
             <div>
                 <div className="text-center">
-                    <h2 style={{ marginTop: "40px", marginBottom: "60px" }}>Affirmations v.15 - Last Edit: 2/1/20</h2>
+                    <h2 style={{ marginTop: "40px", marginBottom: "60px" }}>Affirmations v.16 - Last Edit: 2/1/20</h2>
                     <p className="lead" style={{ fontSize: "1.45em" }}>{AppConstants.TAGLINE}</p>
 
                     <div className="row text-left">
